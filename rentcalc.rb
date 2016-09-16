@@ -1,7 +1,7 @@
 # Rentcalc, a simple billing report generator.
 # 
 # Matt Bagnara
-# github.com/bagnaramatt
+# github.com/bagnaram
 # 
 # CC-BY-SA
 
