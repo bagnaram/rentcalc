@@ -28,7 +28,7 @@ text.each_line do |line|
     total2[i] = total[i] - rent[i] if num % 6 == 5
     num+=1
   end
-  break if num > 12
+#break if num > 12
 end
 
 print "Our bill:\n\n\n"
@@ -68,7 +68,7 @@ rev(internet)
 rev(total)
 
 png(file = "line_chart_label_colored.jpg")
-plot(internet, type="o",xlab = "Months Ago", col="black", ylab = "Cost", main = "Monthly costs", xlim=c(12,1), ylim=c(0,300))
+plot(internet, type="o",xlab = "Months Ago", col="black", ylab = "Cost USD", main = "Monthly costs", xlim=c(12,1), ylim=c(0,300))
 
 lines(elec, type="o", col = "red")
 lines(util, type="o", col = "blue")
