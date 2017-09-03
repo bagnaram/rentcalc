@@ -1,17 +1,17 @@
-=Rentcalc
+# Rentcalc
 
 A simple utility to tabulate and generate rent reports. Very useful in room-mate situations where you want to make clear the current bills. As a bonus, it creates a graphical line graph representation of your bills so you can track the monthly costs.
 
 Generation is easy. Simply prepend a listing of bills, one per line. Order is important.
 
-==Requirements
+## Requirements
 
 Machine you run the script must:
 * Have a recent version of Ruby
 * Have R
 * Have rinruby gem installed
 
-==Usage
+## Usage
 ```
 Usage: rentcalc.rb [options]
     -f, --file PATH                  Path to bills.txt.
@@ -19,7 +19,7 @@ Usage: rentcalc.rb [options]
     -h, --help                       Prints this help.
 ```
 
-==Bills.txt
+## Bills.txt
 
 This file contains a listing of collected bills in a monthly format.
 
