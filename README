@@ -4,4 +4,8 @@ A simple utility to tabulate and generate rent reports. Very useful in room-mate
 
 Generation is easy. Simply prepend a listing of bills, one per line. Order is important.
 
+REQUIREMENTS
+
+Ruby
+R
 
