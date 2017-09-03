@@ -11,7 +11,15 @@ Machine you run the script must:
 * Have R
 * Have rinruby gem installed
 
+## Directions
+Simply build and install the gem
+```
+gem build rentcalc.gemspec
+gem install rentcalc-xxx.gem
+```
+
 ## Usage
+
 ```
 Usage: rentcalc.rb [options]
     -f, --file PATH                  Path to bills.txt.
