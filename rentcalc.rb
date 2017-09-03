@@ -11,15 +11,19 @@ require 'optparse'
 require 'pp'
 
 options = {}
+
+# Default values
+options[:path]="./bills.txt"
+options[:roommates]=3
+options[:fname]="line_chart_label_colored.jpg"
+
 OptionParser.new do |opts|
-  opts.banner = 'Usage: load-images.rb [options]'
+  opts.banner = 'Usage: rentcalc.rb [options]'
   opts.on('-f', '--file PATH', 'Path to bills.txt.') { |v| options[:path] = v }
   opts.on('-r', '--roommates N', Integer, 'Number of roommates to divide bills') { |v| options[:roommates] = v }
+  opts.on('-o', '--output FNAME', 'JPG path to output for chart.') { |v| options[:fname] = v }
   opts.on('-h', '--help', 'Prints this help.') { puts opts; exit }
 end.parse!
-
-options[:path] != '' ? path = options[:path] : path="./bills.txt"
-options.has_key? :roommates ? roommates = options[:roommates] : roommates=3
 
 rent     = []
 gas      = []
@@ -31,12 +35,12 @@ total2   = []
 
 num=0
 
-if !File.exists?(path) then
-  printf("Error: File %s does not exist!\n",path)
+if !File.exists?(options[:path]) then
+  printf("Error: File %s does not exist!\n",options[:path])
   exit
 end
 
-text=File.open(path).read
+text=File.open(options[:path]).read
 text.each_line do |line|
   i=num/6
   val=line.chomp
@@ -64,7 +68,7 @@ printf("%1$-30s %2$20.2f %3$10.2f\n"                                      , "Int
 print "\n\n"
 print("==============================================================\n")
 printf("%1$-51s %2$10.2f\n"                                               , "Subtotal"     , total[0])
-printf("%1$-51s %2$10.2f\n"                                               , "Divided by #{roommates}" , total[0]/roommates)
+printf("%1$-51s %2$10.2f\n"                                               , "Divided by #{options[:roommates]}" , total[0]/options[:roommates])
 print("==============================================================\n")
 
 R.quit
@@ -88,7 +92,7 @@ rev(gas)
 rev(internet)
 rev(total)
 
-png(file = "line_chart_label_colored.jpg")
+png(file = "#{options[:fname]}")
 plot(internet, type="o",xlab = "Months Ago", col="black", ylab = "Cost USD", main = "Monthly costs", xlim=c(12,1), ylim=c(0,300))
 
 lines(elec, type="o", col = "red")
