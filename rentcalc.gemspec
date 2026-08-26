@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.date        = '2017-09-03'
   s.summary     = "rentcalc"
   s.description = "A simple utility to tabulate and generate rent and bill reports."
-  s.authors     = ["Matt Bagnara"]
+  s.authors     = ["bagnaram"]
   s.email       = 'mbagnara@redhat.com'
   s.homepage    = 'https://github.com/bagnaram/rentcalc'
   s.license     = 'BSD 3-Clause'
